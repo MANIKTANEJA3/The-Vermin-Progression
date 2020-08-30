@@ -1,0 +1,876 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<stdio.h>
+#include<dos.h>
+#include<graphics.h>
+#include<fstream.h>
+int flag=0;
+class game
+{
+public:
+int question();
+void numb();
+void chance(int,int);
+void sponsors();
+}g,g1,g2,g3;
+void main()
+{
+clrscr();
+//int gdriver=DETECT,gmode;
+//x=getmaxx()/2;
+//y=getmaxy()/2;
+//initgraph(&gdriver,&gmode,"C://TC//BGI");!
+/*for(int k=0;k<200;k++)
+{
+ delay(100);
+ setcolor(i/10);
+ arc(x,y,0,180,i);
+} */
+
+void details();
+void display1();
+//void display2();
+
+void ctr2();
+//void numb();
+void ctr1();
+void start();
+display1();
+//void ctr3();
+delay(70);
+details();
+cleardevice();
+delay(100);
+char m;
+int k;
+randomize();
+void display3();
+int z=random(10)+1;
+do
+{
+ setbkcolor(z);
+ cout<<endl;
+ cout<<"1.TO OPEN THE DISCLAIMER -"<<endl;
+ cout<<"2.TO OPEN THE TUTORIAL - "<<endl;
+ cout<<"3.TO START THE GAME !!!"<<endl;
+ cout<<"4.TO EXIT THE GAME"<<endl;
+ cin>>k;
+ switch(k)
+  {
+   case 1:ctr2();
+	   break;
+   case 2:ctr1();
+	  break;
+   case 3:clearviewport();
+	  cleardevice();
+	  display3();
+	  delay(100);
+	  g1.numb();
+   //	  start();
+	  break;
+   case 4:int status;
+	  status=getch();
+	  exit(status-0);
+	  break;
+  }
+ if(k!=3)
+ {
+ cout<<endl;
+ cout<<"Wish to go through the menu again?"<<endl;
+ cin>>m;
+ cleardevice();
+ }
+}
+ while(m=='y'||m=='Y' ||  k!=3);
+getch();
+}
+void details()
+{char m[20];
+cout<<"ENTER USERNAME -  "<<endl;
+gets(m);
+setbkcolor(BLUE);
+cout<<m<<" "<<"WELCOME TO THE LATEST  FUTURISTIC GAME IN THE TOWN!!! "<<endl;
+cout<<"GEAR UP CAUSE THE THINGS UP NEXT ARE  GONNA BLOW UP YOUR MIND..";
+//textcolor(BLINK);
+//cprintf("LOADING");
+//return m;
+delay(3500);
+cleardevice();
+}
+
+void display1()
+{
+int x,y;
+randomize();
+
+int gdriver = DETECT,gmode;
+	initgraph(&gdriver,&gmode,"C:\\TC\\BGI");
+	x=getmaxx()/2;
+	y=getmaxy()/2;
+     //	setbkcolor(WHITE);
+     int style;
+     int size=1;
+     if (style==GOTHIC_FONT)
+     size=1000;
+     settextstyle(style,HORIZ_DIR,size);
+     gotoxy(x,y);
+     //int k2=random(10)+1;
+     setbkcolor(RED);
+     outtextxy(x,y,"THE VERMIN PROGRESSION");
+     outtextxy(50,400,"AN EXCLUSIVE PRODUCTION OF  THE SONY COMPUTER ENTERTAINMENTS");
+     delay(3000);
+     g2.sponsors();
+     char k[20];
+     //gotoxy(50,393);
+     cout<< "lets enter the virtual vortex?"<<endl;
+     gotoxy(50,100);
+     gets(k);
+    //	rectangle(100,100,110,110);
+      //	floodfill(18,17,16);
+      if(strcmp(k,"yes")==0||strcmp(k,"YES")==0)
+      {
+	cleardevice();
+	for(int k=30;k<200;k++)
+	{     setbkcolor(BLACK);
+	      delay(25);
+		setcolor(k/10);
+		arc(x,y,0,180,k);
+	      //	textcolor(random(10));
+		//cprintf("AWESOMENESS IS WHAT  U GET");
+	  //gotoxy(50,500);
+	  //outtextxy(50,500,"THE VERMIN  PROGRESSION");
+	}  }
+	else if(strcmp(k,"NO")==0||strcmp(k,"no")==0)
+	{
+	cout<<"sorry ABHIMANYU i know its u - u dont  have an option!!!"<<endl;
+	delay(3000);
+	}
+	//sponsors();
+
+
+       /* for(k=199;k>29;k--)
+       {
+	 delay(100);
+	 setcolor(k/10);
+	 arc(x,y,0,180,k);
+       } */
+      cleardevice();
+}
+/*void ctr3()
+{ delay(50);
+//int x=getmaxx()/2;
+//int y=getmaxy()/2;
+//line(0,0,x,y);
+setbkcolor(RED);
+textcolor(7+BLINK);
+cprintf(" THE   VERMIN   PROGRESSION");
+}*/
+void game::sponsors()
+{              cleardevice();
+setbkcolor(LIGHTBLUE);
+outtextxy(150,50,"OUR PROUD SPONSORS");
+outtextxy(200,100,"* ACTIVISION");
+outtextxy(200,125,"* RAPDIDASH");
+//textcolor(BLINK);
+outtextxy(200,150,"* SONY COMPUTER  ENTERTAINMENT ");
+outtextxy(200,175,"* DREAMWORKS");
+//textcolor(BLINK);
+outtextxy(200,200,"* EA ENTERTAINMENT");
+outtextxy(200,225,"* HARD WORK...");
+
+delay(3000);
+cleardevice();
+}
+void display3()
+{
+int m=0;
+randomize();
+int i=random(13)-1;
+while(m<30)
+{
+
+textcolor(i+BLINK);
+textbackground(5);
+sound(random(15));
+cout<<"LO";
+sound(5*random(15));
+textcolor(i*3+BLINK);
+cout<<"AD";
+textcolor((i+3)+BLINK);
+cout<<"ING";
+delay(100);
+nosound();
+cout<<"    ";
+m++;
+delay(200);
+nosound();
+setbkcolor(random(15));
+cleardevice();
+}
+}
+void game::numb()
+{
+/*char m;
+cout<<"Please enter your player name"<<endl;
+gets(m);  */
+ setbkcolor(BLUE);
+// outtextxy(50,393," 1  2   3   4   5   6   7   8   9   10");
+// outtextxy(60,393,"   |  |   |   |   |   |   |   |   |   ");
+// outtextxy(60,373,"   |  |   |   |   |   |   |   |   |   ");
+// outtextxy(60,363,"   |  |   |   |   |   |   |   |   |   ");
+// outtextxy(60,353," 20  19  18  17  16  15  14  13  12  11");
+// outtextxy(60,333,"    |   |   |   |   |   |   |   |   |   ");
+// outtextxy(60,323,"    |   |   |   |   |   |   |   |   |   ");
+// outtextxy(60,313,"    |   |   |   |   |   |   |   |   |   ");
+// outtextxy(50,313," 21  22  23  24  25  26  27  28  29  30");
+// outtextxy(50,273," 40  39  38  37  36  35  34  33  32  31");
+// outtextxy(50,233," 41  42  43  44  45  46  47  48  49  50");
+// outtextxy(50,193," 60  59  58  57  56  55  54  53  52  51");
+// outtextxy(50,153," 61  62  63  64  65  66  67  68  69  70");
+// outtextxy(50,113," 80  79  78  77  76  75  74  73  72  71");
+// outtextxy(50,73 ," 81  82  83  84  85  86  87  88  89  90");
+ //outtextxy(50,33 ," 100 99  98  97  96  95  94  93  92  91");
+
+//    int ROWS = 10;
+  //  int COLS = 10;
+  /*  long char board[10][10]= {       // initialize the array and  create an 10x10  board
+
+				    {'G', '99', '98',  '97', '96', '95', '94', '93' , '92' , '91'},
+
+				    {'81', '82', '83',  '84', '85', '86', '87', '88','89','90'},
+
+		    {'80' , '79' , '78' , '77' , '76' , '75' , '74' ,  '73' , '72' , '71'},
+
+				    {'61' , '62' , '63'  , '64' , '65' , '66' , '67' , '68' , '69' ,'70'},
+
+				    {'60','59','58',  '57', '56', '55', '54', '53', '52', '51'},
+
+				    { '41', '42', '43',  '44', '45', '46', '47', '48', '49', '50'},
+
+				    { '40', '39', '38',  '37', '36', '35', '34', '33', '32', '31'},
+
+				    { '21', '22', '23',  '24', '25', '26', '27', '28' , '29' , '30'},
+
+				    { '20' , '19' ,  '18', '17', '16', '15', '14', '13', '12', '11'},
+
+				    {'1', '2', '3', '4',  '5', '6', '7', '8', '9' , '10'}
+
+				    }; */
+
+    /*		       clrscr();
+
+    for (int i = 0; i < ROWS; ++i)
+
+    {
+
+	for (int j = 0; j < COLS; ++j)
+	    {
+
+	    cout <<"  "<< "*"<<"  ";
+	   //cout<<endl;
+	    }
+	    cout<<endl;
+    }
+
+// int left=getmaxx()/2-20;
+ //int top=getmaxy()/2-20;
+ //int right=getmaxx()/2+20;
+ //int bottom=getmaxy()/2+20;
+textcolor(10);
+outtextxy(40,393,"M");
+//void chance();
+chance();
+}
+}
+ //rectangle(left,top,right,bottom);
+ /*setcolor(getmaxcolor());
+ setfillstyle(SOLID_FILL,getmaxcolor());
+ floodfill(2,2,208)*/
+clearviewport();
+ char ch1;
+ char tempboard[10][60] = {" 100 99 98 97 96 95 94 93 92 91",  //Starting layout, 0's stand for empty places
+
+			       " 81 82 83 84 85 86 87  88 89 90",
+
+			       " 80 79 78 77 76 75 74  73 72 71",
+
+			       " 61 62 63 64 65 66 67  68 69 70",
+
+			       " 60 59 58 57 56 55 54  53 52 51",
+
+			       " 41 42 43 44 45 46 47  48 49 50",
+
+			       " 40 39 38 37 36 35 34  33 32 31",
+
+			       " 21 22 23 24 25 26 27  28 29 30",
+
+			       " 20 19 18 17 16 15 14  13 12 11",
+
+			       " 01 02 03 04 05 06 07  08 09 10" };
+int Playerpos=tempboard[0][0];
+do
+{
+setbkcolor(BLUE);
+       //  char board[10][10];
+    char tempboard[10][60] = {" 100 99 98 97 96 95 94 93 92 91",  //Starting layout, 0's stand for empty places
+
+			       " 81 82 83 84 85 86 87  88 89 90",
+
+			       " 80 79 78 77 76 75 74  73 72 71",
+
+			       " 61 62 63 64 65 66 67  68 69 70",
+
+			       " 60 59 58 57 56 55 54  53 52 51",
+
+			       " 41 42 43 44 45 46 47  48 49 50",
+
+			       " 40 39 38 37 36 35 34  33 32 31",
+
+			       " 21 22 23 24 25 26 27  28 29 30",
+
+			       " 20 19 18 17 16 15 14  13 12 11",
+
+			       " 01 02 03 04 05 06 07  08 09 10" };
+
+	clrscr();
+    for (int i = 0; i < 10; ++i)
+    { //    cprintf("Current location is X: %d  Y: %d\r\n", wherex (), wherey());
+	for (int j = 0; j < 60; ++j)
+	{
+	     cout<<tempboard[i][j];
+	    // if(tempboard[i][j]=='  ')
+	     //{
+	    // cout<<"  ";
+	     //}
+	      if(tempboard[i][j]==' ')
+	     {
+	     cout<<"-|-";
+	     }
+	}
+	cout<<endl;
+    }
+    delay(1500);
+    //	    void chance();
+//    int Playerpos=0,RollDie=0;
+  //	    chance(Playerpos,RollDie);
+/* void game::chance()
+{
+//numb();
+//int i=0;
+//char e;
+//int u=0;
+int f=55;
+//while(u<4)
+//{
+ int g,p;
+int t=0;
+while(t<5)
+{
+ outtextxy(50,420,"enter the no.of steps(1-6)");
+ cout<<endl;
+ gotoxy(50,420);
+ cin>>g;
+// outtextxy(
+// if(g>=1 && g<=6)
+ //{
+ //do
+// int u=0;
+ //int f=55;
+//for(int i=0,i<5,i++)
+//{
+
+
+      // p=
+    //   f=p;
+  //     question();
+ }
+}
+   // }
+     //while(i!=100000);
+  //   }
+  */
+//   void game::chance (int Playerpos, int RollDie=0)
+/*{      char tempboard[10][60] = {" 100 99 98 97 96 95 94 93 92  91", //Starting layout, 0's stand for empty places
+
+			       " 81 82 83 84 85 86 87  88 89 90",
+
+			       " 80 79 78 77 76 75 74  73 72 71",
+
+			       " 61 62 63 64 65 66 67  68 69 70",
+
+			       " 60 59 58 57 56 55 54  53 52 51",
+
+			       " 41 42 43 44 45 46 47  48 49 50",
+
+			       " 40 39 38 37 36 35 34  33 32 31",
+
+			       " 21 22 23 24 25 26 27  28 29 30",
+
+			       " 20 19 18 17 16 15 14  13 12 11",
+
+			       " 01 02 03 04 05 06 07  08 09 10" };
+
+  */
+	// rolls dice, and moves the playe
+     //	int Playerpos=tempboard[0][0];
+       //	char ch1;
+	      //	for (Playerpos = 0; Playerpos = 100;  Playerpos++)
+       //
+/* int left=;
+ int top=;
+ int right=;
+ int bottom=;
+ */
+ rectangle(20,10,20,10);
+ setcolor(getmaxcolor());
+ setfillstyle(SOLID_FILL,getmaxcolor());
+ floodfill(2,2,208);
+			tempboard[0][0]='M';		 					        randomize();
+
+			int RollDie = random(6)+1;
+			cout<<"your dice rolled the  number"<<" "<<RollDie<<endl;
+
+			 Playerpos = Playerpos +  RollDie;
+
+		       //	 tempboard[0][0]='M';
+		       //	CheckChutes();
+		       //checkLadders();
+			cout << "Your new location  is: " << Playerpos << endl;
+		 delay(3000);
+
+		  question();
+
+	 // }
+		delay(1000);
+		if(flag==0)
+		{
+
+		++Playerpos;
+		cout<<endl;
+		setbkcolor(BLACK);
+		cout<<"correct answer  reward--!!!"<<endl;
+		delay(2000);
+
+		cout<<"new position"<<" "<<Playerpos;
+		}
+		else if(flag==1)
+		{
+		--Playerpos;
+		cout<<endl;
+		setbkcolor(RED);
+		cout<<"incorrect answer  penalty----"<<endl;
+		cout<<"new position"<<"  "<<Playerpos<<endl;
+		}
+		cout<<endl;
+		if(Playerpos==20)
+		{
+		setbkcolor(LIGHTBLUE);
+		cout<<"Wohoa!!you got on a  ladder"<<endl;
+		Playerpos=34;
+
+		cout<<"current  location"<<Playerpos<<endl;
+		}
+		else if(Playerpos==47)
+		{
+		cout<<"you are fortunate"<<endl;
+		Playerpos+=10;
+		setbkcolor(MAGENTA);
+		cout<<"current location"<<"   "<<Playerpos<<endl;
+		}
+
+		else if(Playerpos==37)
+		{
+		setbkcolor(RED);
+		cout<<"You got bit by a snake!better  luck next time"<<endl;
+		Playerpos=3;
+		cout<<"current location"<<"   "<<Playerpos<<endl;
+		}
+	      else if(Playerpos==42)
+		{
+		setbkcolor(YELLOW);
+		cout<<"bonus - "<<endl;
+		Playerpos+=10;
+		cout<<"current location"<<"  "<<Playerpos<<endl;
+		}
+		else if(Playerpos==38)
+		{
+		setbkcolor(BLACK);
+		cout<<"wohoo!snake bite !!!"<<endl;
+		cout<<"current location"<<" "  <<Playerpos<<endl;
+		Playerpos-=13;
+		}
+		cout<<"press Y or y to continue"<<endl;
+		cin>>ch1;
+	cleardevice();
+	//clearviewport ;
+	if(ch1=='n')
+	{
+	int status;
+	  status=getch();
+	  exit(status-0);
+	 }
+		}
+		while(ch1=='y'||ch1=='Y'|| Playerpos!=100);
+		if(Playerpos==100)
+		{
+		int x=getmaxx()/2;
+		int y=getmaxy()/2;
+		cout<<endl;
+		outtextxy(x,y,"WINNER");
+		}
+	/*for (int Player2pos = 0; Player2pos < 100;  Player2pos++)
+		{
+			RollDie = rand() % 6 + 1;
+			Player2pos = 1;
+			NewPos = Player2pos +  RollDie;
+			CheckChutes();
+			CheckLadders();
+			cout << "Your new location  is: " << NewPos << endl;
+			break;
+		}
+	}         */
+	}
+
+
+ void ctr1()
+ {
+  ifstream f1;
+  char word[500];
+  f1.open("manik.txt",ios::binary);
+  while(!f1.eof())
+  {
+   f1>>word;
+   cout<<word<<"  ";
+
+  }
+  f1.close();
+ }
+void ctr2()
+{
+ifstream f2;
+char word2[500];
+f2.open("m3.txt");
+while(!f2.eof())
+{
+ f2>>word2;
+ cout<<word2<<"  ";
+}
+f2.close();
+}
+/*void start()
+{
+randomize();
+int j=random(10);
+int z=random(5)+j;
+cout<<"awesomeness overloaded"<<endl;
+} */
+
+int game::question()
+{
+cleardevice();
+randomize();
+int k1;
+k1=random(9)+1;
+switch(k1)
+{
+case 1:char s[20];
+       cout<<"Grand cetral,Park Avenue , new york is the wolrds  largest?";
+       gets(s);
+       if(strcmp(s,"railway station")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       }
+       delay(1000);
+
+       break;
+case 2:char s1[20];
+       cout<<"ERITREA ,which became the 182nd member of the  UN in 1993 is in the continent of ?"<<endl;
+       gets(s1);
+       if(strcmp(s1,"africa")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+case 3:char s2[20];
+       cout<<"for the olympics and world tournanment , the  dimension of the basketball court(in m) are ?"<<endl;
+       gets(s2);
+       if(strcmp(s2,"28m*15m")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+case 4:char s3[20];
+       cout<<"DRDL stands for?"<<endl;
+       gets(s3);
+       if(strcmp(s3,"defence research and development  laboratory")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+case 5:char s4[20];
+       cout<<"heavy water project(TALCHER) and fertilizer  plant(PARADEEP) are famous industries of?"<<endl;
+       gets(s4);
+       if(strcmp(s4,"orissa")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+case 6:char s5[20];
+       cout<<"DURAND CUPis associated with the game of  ?"<<endl;
+       gets(s5);
+       if(strcmp(s5,"football")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+case 7:char s6[20];
+       cout<<"Headquarters of UNO is situated in?"<<endl;
+       gets(s6);
+       if(strcmp(s6,"new york,usa")==0)
+       {
+       cout<<"correct";
+       flag=0;
+       delay(1000);
+       }
+       else
+       {
+       cout<<"incorrect";
+       flag=1;
+       delay(1000);
+       }
+       break;
+//cleardevice();
+
+/*case 8:char s7[20];
+      cout<<"First international peace Congress(in 1843 AD) was  held at?"<<endl;
+      gets(s7);
+      if(strcmp(s7,"london")==0);
+      {
+      cout<<"correct";
+      }
+      else
+      {
+      cout<<"incorrect";
+
+      }
+      break; */
+case 8:char s8[20];
+      cout<<"fathometer is used to measure ?"<<endl;
+      gets(s8);
+      if(strcmp(s8,"ocean depth")==0)
+      {
+      cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+      break;
+case 9:char s9[20];
+	cout<<"Fire Temple is the place of worship of which  religion?"<<endl;
+	gets(s9);
+	if(strcmp(s9,"zoroastrianism")==0)
+	{
+	cout<<"correct";
+	flag=0;
+	delay(1000);
+	}
+	else
+	{
+	cout<<"incorrect";
+	flag=1;
+	delay(1000);
+	}
+	break;
+//return flag;
+//cleardevice();
+//}
+case 10:char s10[20];
+       cout<<"Guru Gobind Singh ji was the author of which  book?"<<endl;
+       gets(s10);
+       if(strcmp(s10,"Dasam Granth")==0)
+       {
+       cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+      break;
+
+case 11 : char s11[20];
+	 cout<<"For galvanizing iron which metal is  used?"<<endl;
+	 gets(s11);
+	 if(strcmp(s11,"zinc")==0)
+	 {
+	 cout<<"correct";
+	 flag=0;
+	 delay(1000);
+	 }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+      break;
+case 12:char s12[20];
+       cout<<"Who is the most awesome person in the  world?"<<endl;
+       gets(s12);
+       if(strcmp(s12,"manik")==0)
+	 {
+	 cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+      break;
+case 13:int s13;
+	cout<<"sin^-1(12/13)+cos^-1(4/5)+tan^-1(63/16) =?"<<endl;
+	cin>>s13;
+	if(s13==3.14)
+	 {
+	 cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+	break;
+case 14:char s14[20];
+	cout<<"key point for a reaction to undergo aldol  condensation ?"<<endl;
+	gets(s14);
+	if(strcmp(s14,"presence of alpha hydrogen")==0)
+
+		 {
+	 cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+	break;
+case 15:int s15;
+	cout<<"tan{1/2[cos^-1((5)^1/2)/3)]}=?"<<endl;
+       cin>>s15;
+       if(s15==0.381)
+
+	 {
+	 cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+       break;
+case 16:char s16[20];
+	cout<<"do u love the game?"<<endl;
+	gets(s16);
+	if(strcmp(s16,"yes")==0)
+
+		 {
+	 cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+	break;
+case 17:char s17[40];
+	cout<<"gravity setting chambers are used in  industries to remove?"<<endl;
+	gets(s17);
+	if(strcmp(s17,"suspended particulate matter")==0)
+	{
+      cout<<"correct";
+      flag=0;
+      delay(1000);
+      }
+      else
+      {
+      cout<<"incorrect";
+      flag=1;
+      delay(1000);
+      }
+ }
+cleardevice();
+return flag;
+
+}
